@@ -1,8 +1,12 @@
 import { TaskInput } from './components/TaskInput';
+import { TaskList } from './components/TaskList';
+import { useSelector, useDispatch } from 'react-redux';
 import moonIcon from './assets/icons/icon-moon.svg';
 import './App.css';
 
 function App() {
+  const tasks = useSelector((state) => state.tasks?.value || []);
+
   return (
     <>
       <header>
@@ -12,6 +16,7 @@ function App() {
         </div>
       </header>
       <TaskInput />
+      <TaskList tasks={tasks} />
     </>
   );
 }
