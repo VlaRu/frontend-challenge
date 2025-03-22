@@ -1,8 +1,27 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleTask } from '../store/taskSlice';
+import { toggleTask, deleteTask } from '../store/taskSlice';
 
-export function TaskList({ tasks }) {
+export function TaskList({ tasks, setFilteredTasks }) {
   const dispatch = useDispatch();
+  const [draggedItemIndex, setDraggedItemIndex] = useState(null);
+
+  function handleDragStart(indx) {
+    setDraggedItemIndex(indx);
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+  }
+
+  function handleDrop(index) {
+    if (draggedItemIndex === null) return;
+    const updateTasks = [...tasks];
+    const [draggedItem] = updateTasks.splice(draggedItemIndex, 1);
+    updateTasks.splice(index, 0, draggedItem);
+    setFilteredTasks(updateTasks);
+    setDraggedItemIndex(null);
+  }
 
   return (
     <ul>
@@ -10,6 +29,10 @@ export function TaskList({ tasks }) {
         tasks.map((task, index) => (
           <li
             key={task.id}
+            draggable
+            onDragStart={() => handleDragStart(index)}
+            onDragOver={handleDragOver}
+            onDrop={() => handleDrop(index)}
           >
             <input
               type="checkbox"
@@ -23,6 +46,7 @@ export function TaskList({ tasks }) {
             >
               {task.text}
             </span>
+            <button onClick={() => dispatch(deleteTask(task.id))}>x</button>
           </li>
         ))
       ) : (
