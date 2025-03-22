@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react';
 import { TaskInput } from './components/TaskInput';
 import { TaskList } from './components/TaskList';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearCompletedTasks } from './store/taskSlice';
-import { FilteredPanel } from './components/FilterPanel';
-import moonIcon from './assets/icons/icon-moon.svg';
+import { TaskToolbar } from './components/TaskToolbar';
+import { Header } from './components/Header';
 import './App.css';
 
 function App() {
-  const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks?.value || []);
   const [filteredTasks, setFilteredTasks] = useState(tasks);
 
@@ -28,15 +26,10 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>TODO</h1>
-        <div>
-          <img src={moonIcon} alt="theme-img" />
-        </div>
-      </header>
-      <TaskInput />
-      <TaskList tasks={filteredTasks} setFilteredTasks={setFilteredTasks} />
-      <FilteredPanel filter={filterTasks}/>
+      <Header/>
+      <TaskInput/>
+      <TaskList tasks={filteredTasks} setFilteredTasks={setFilteredTasks}/>
+      <TaskToolbar filter={filterTasks}/>
     </>
   );
 }
