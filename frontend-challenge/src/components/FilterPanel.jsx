@@ -1,9 +1,11 @@
-export function FilteredPanel({filter}) {
+import '../styles/Toolbar.css';
+
+export function FilteredPanel({filter, active}) {
     return (
-        <>
-            <button onClick={() => filter('all')}>All</button>
-            <button onClick={() => filter('active')}>Active</button>
-            <button onClick={() => filter('completed')}>Completed</button>
-        </>
+        <div className="filter-btn_container">
+            <button className={active === 'all'? 'active': ''} onClick={() => filter('all')}>All</button>
+            <button className={active === 'active'? 'active': ''} onClick={() => filter('active')}>Active</button>
+            <button className={active === 'completed'? 'active': ''} onClick={() => filter('completed')}>Completed</button>
+        </div>
     )
 }
