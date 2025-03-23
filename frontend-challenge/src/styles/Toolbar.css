@@ -1,0 +1,33 @@
+.toolbar-container {
+  height: 50px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #fff;
+  color: var(--light-grayish-blue);
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+}
+
+.filter-btn_container button.active {
+  color: var(--bright-blue);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 376px) {
+  .toolbar-container {
+    height: 47px;
+    font-size: 12px;
+  }
+
+  .button-clear {
+    font-size: 12px;
+  }
+
+  .filter-btn_container{
+    font-size: 14px;
+  }
+}

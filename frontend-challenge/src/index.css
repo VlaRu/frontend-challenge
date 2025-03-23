@@ -1,50 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-  font-family: system-ui, Josefin Sans, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #e08686;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Breakpoints */
+  --mobile: 375px;
+  --desktop: 1440px;
+
+  /* Primary Colors */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* Light Theme */
+  --light-very-light-gray: hsl(0, 0%, 98%);
+  --light-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --light-dark-grayish-blue: hsl(236, 9%, 61%);
+  --light-very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+  --dark-very-dark-blue: hsl(235, 21%, 11%);
+  --dark-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --dark-light-grayish-blue: hsl(234, 39%, 85%);
+  --dark-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-dark-grayish-blue: hsl(234, 11%, 52%);
+  --dark-very-dark-grayish-blue-1: hsl(233, 14%, 35%);
+  --dark-very-dark-grayish-blue-2: hsl(237, 14%, 26%);
 }
 
 body {
   max-width: 1440px;
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--light-very-light-gray) url(./assets/images/bg-desktop-light.jpg) no-repeat top center;
   font-size: 18px;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background: none;
+  border: none;
+  color: var(--light-grayish-blue);
+  font-weight: 700;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  color: var(--light-very-dark-grayish-blue);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+@media screen and (max-width: 376px) {
+  body {
+    background: var(--light-very-light-gray) url(./assets/images/bg-mobile-light.jpg) no-repeat top center;
+  }
+
+  .filter-btn_container {
+    position: absolute;
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    left: 0;
+    bottom: -65px;
+    box-shadow: 1px 23px 55px -22px var(--light-dark-grayish-blue);
+  }
 }
