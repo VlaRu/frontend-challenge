@@ -6,9 +6,9 @@
   justify-content: space-between;
   padding: 0 20px;
   background-color: #fff;
-  color: var(--light-grayish-blue);
+  color: var(--light-dark-grayish-blue);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   border-radius: 5px;
 }
 

@@ -31,6 +31,7 @@
 }
 
 .task-text {
+  font-weight: 700;
   margin-left: 25px;
   flex: 1;
   white-space: normal;
