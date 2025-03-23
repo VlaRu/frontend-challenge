@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewTask } from '../store/taskSlice';
+import '../styles/Tasks.css'
 
 export function TaskInput() {
   const [inputValue, setInputValue] = useState('');
+  const [placeholder, setPlaceholder] = useState('Create a new todo...');
   const dispatch = useDispatch();
 
   function handleChange(e) {
@@ -17,9 +19,26 @@ export function TaskInput() {
     setInputValue('');
   }
 
+  const handleFocus = () => {
+    setPlaceholder('');
+  };
+
+  const handleBlur = () => {
+    setPlaceholder('Create a new todo...');
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={inputValue} onChange={handleChange} />
+    <form className='input-form' onSubmit={handleSubmit}>
+      <div className='input-circle'></div>
+      <input
+        className='input-text'
+        type="text"
+        value={inputValue}
+        placeholder={placeholder}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onChange={handleChange}
+      />
     </form>
   );
 }
