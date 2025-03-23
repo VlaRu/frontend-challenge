@@ -25,7 +25,7 @@ const taskSlice = createSlice({
       if (task) {
         task.completed = !task.completed;
       }
-      state.count = state.value.length;
+      state.count = state.value.filter((task) => !task.completed).length;
     },
     clearCompletedTasks: (state) => {
       state.value = state.value.filter((task) => !task.completed);
