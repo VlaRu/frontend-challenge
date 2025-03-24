@@ -4,7 +4,7 @@
 
 ![screen](screen-project.png)
 
-## Deploy [link](https://67e077335697e3b6f7a8cdfe--keen-custard-98269d.netlify.app/)
+## Deploy [link](https://effulgent-blancmange-6444a5.netlify.app/)
 
 ## Source code [link](https://github.com/VlaRu/frontend-challenge/tree/feature/frontend-challenge)
 
@@ -25,3 +25,26 @@
 - Filter by all/active/complete todos
 - Clear all completed todos
 - **Bonus**: Drag and drop to reorder items on the list
+
+
+## Install
+
+#### follow to branch 'feature'
+
+``
+cd frontend-challenge
+``
+
+install dependencies
+
+``
+npm i
+``
+
+``
+npm run dev
+``
+
+``
+npm run build
+``
