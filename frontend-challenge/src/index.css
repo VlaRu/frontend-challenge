@@ -54,6 +54,11 @@ body {
   font-optical-sizing: auto;
   margin: 0 auto;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--dark-very-dark-desaturated-blue);
 }
 
 button {
@@ -68,7 +73,7 @@ button:hover {
   color: var(--light-very-dark-grayish-blue);
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 375px) {
   body {
     background: var(--light-very-light-gray) url(./assets/images/bg-mobile-light.jpg) no-repeat top center;
   }
@@ -85,4 +90,28 @@ button:hover {
     bottom: -65px;
     box-shadow: 1px 23px 55px -22px var(--light-dark-grayish-blue);
   }
+
+  .filter-btn_container.dark {
+    box-shadow: 0px 3px 17px 1px var(--dark-very-dark-grayish-blue-1);
+  }
+}
+
+.input-form.dark,
+.list-container.dark,
+.toolbar-container.dark,
+.filter-btn_container.dark {
+  background-color: var(--dark-very-dark-blue);
+}
+
+.input-text.dark,
+.task.dark {
+  color: var(--dark-light-grayish-blue);
+}
+
+.task.checked.dark {
+  color: var(--dark-very-dark-grayish-blue-1);
+}
+
+.main-content_container.dark {
+  box-shadow: 0px 3px 17px 1px var(--dark-very-dark-grayish-blue-1);
 }
