@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../App'
 import { useDispatch } from 'react-redux';
 import { toggleTask, deleteTask } from '../store/taskSlice';
 import cross from '../assets/icons/icon-cross.svg';
@@ -6,6 +7,7 @@ import '../styles/Input.css'
 
 export function TaskList({ tasks, setFilteredTasks }) {
   const dispatch = useDispatch();
+  const { theme } = useContext(ThemeContext);
   const [draggedItemIndex, setDraggedItemIndex] = useState(null);
 
   function handleDragStart(indx) {
@@ -26,11 +28,11 @@ export function TaskList({ tasks, setFilteredTasks }) {
   }
 
   return (
-    <ul className='list-container'>
+    <ul className={`list-container ${theme}`}>
       {tasks.length > 0 ? (
         tasks.map((task, index) => (
           <li
-            className={task.completed ? "task checked" : "task"}
+            className={task.completed ? `task checked ${theme}` : `task ${theme}`}
             key={task.id}
             draggable
             onDragStart={() => handleDragStart(index)}
