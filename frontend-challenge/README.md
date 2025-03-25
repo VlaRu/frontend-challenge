@@ -9,6 +9,7 @@
 ## Source code [link](https://github.com/VlaRu/frontend-challenge/tree/feature/frontend-challenge)
 
 ## Stack:
+
 - Vite
 - React
 - Redux/RTK

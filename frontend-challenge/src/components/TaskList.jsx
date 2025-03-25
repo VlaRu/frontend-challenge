@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
-import { ThemeContext } from '../App'
+import { ThemeContext } from '../App';
 import { useDispatch } from 'react-redux';
 import { toggleTask, deleteTask } from '../store/taskSlice';
 import cross from '../assets/icons/icon-cross.svg';
-import '../styles/Input.css'
+import '../styles/Input.css';
 
 export function TaskList({ tasks, setFilteredTasks }) {
   const dispatch = useDispatch();
@@ -32,7 +32,9 @@ export function TaskList({ tasks, setFilteredTasks }) {
       {tasks.length > 0 ? (
         tasks.map((task, index) => (
           <li
-            className={task.completed ? `task checked ${theme}` : `task ${theme}`}
+            className={
+              task.completed ? `task checked ${theme}` : `task ${theme}`
+            }
             key={task.id}
             draggable
             onDragStart={() => handleDragStart(index)}
@@ -40,26 +42,33 @@ export function TaskList({ tasks, setFilteredTasks }) {
             onDrop={() => handleDrop(index)}
           >
             <input
-              className='checkbox'
+              className="checkbox"
               type="checkbox"
               checked={task.completed}
               onChange={() => dispatch(toggleTask(task.id))}
             />
             <span
-              className='task-text'
+              className="task-text"
               style={{
                 textDecoration: task.completed ? 'line-through' : 'none',
               }}
             >
               {task.text}
             </span>
-            <button className='delete-button' onClick={() => dispatch(deleteTask(task.id))}>
-              <img className='delete-button_icon' src={cross} alt="cross-icon" />
+            <button
+              className="delete-button"
+              onClick={() => dispatch(deleteTask(task.id))}
+            >
+              <img
+                className="delete-button_icon"
+                src={cross}
+                alt="cross-icon"
+              />
             </button>
           </li>
         ))
       ) : (
-        <p style={{color: 'var(--light-grayish-blue)'}}>No tasks available</p>
+        <p style={{ color: 'var(--light-grayish-blue)' }}>No tasks available</p>
       )}
     </ul>
   );

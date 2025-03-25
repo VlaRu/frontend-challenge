@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.task.checked{
+.task.checked {
   color: var(--dark-light-grayish-blue);
 }
 
@@ -42,7 +42,7 @@
 .delete-button {
   opacity: 0;
   transition: opacity 0.5s ease;
-  margin-left: auto
+  margin-left: auto;
 }
 
 .checkbox {
@@ -64,12 +64,16 @@
 }
 
 .checkbox:checked {
-  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
   border: none;
 }
 
 .checkbox:checked::after {
-  content: "";
+  content: '';
   display: block;
   width: 14px;
   height: 14px;

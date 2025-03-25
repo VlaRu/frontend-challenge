@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewTask } from '../store/taskSlice';
 import { ThemeContext } from '../App';
-import '../styles/Tasks.css'
+import '../styles/Tasks.css';
 
 export function TaskInput() {
   const [inputValue, setInputValue] = useState('');
@@ -27,11 +27,11 @@ export function TaskInput() {
 
   const handleBlur = () => {
     setPlaceholder('Create a new todo...');
-  }
+  };
 
   return (
     <form className={`input-form ${theme}`} onSubmit={handleSubmit}>
-      <div className='input-circle'></div>
+      <div className="input-circle"></div>
       <input
         className={`input-text ${theme}`}
         type="text"

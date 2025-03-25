@@ -13,7 +13,11 @@
 
   /* Primary Colors */
   --bright-blue: hsl(220, 98%, 61%);
-  --check-bg: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --check-bg: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 
   /* Light Theme */
   --light-very-light-gray: hsl(0, 0%, 98%);
@@ -47,14 +51,17 @@ body {
   min-height: fit-content;
   display: flex;
   justify-content: center;
-  background: var(--light-very-light-gray) url(./assets/images/bg-desktop-light.jpg) no-repeat top center;
+  background: var(--light-very-light-gray)
+    url(./assets/images/bg-desktop-light.jpg) no-repeat top center;
   font-size: 18px;
   font-weight: 400;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-optical-sizing: auto;
   margin: 0 auto;
   padding: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 body.dark {
@@ -75,7 +82,8 @@ button:hover {
 
 @media screen and (max-width: 375px) {
   body {
-    background: var(--light-very-light-gray) url(./assets/images/bg-mobile-light.jpg) no-repeat top center;
+    background: var(--light-very-light-gray)
+      url(./assets/images/bg-mobile-light.jpg) no-repeat top center;
   }
 
   .filter-btn_container {

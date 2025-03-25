@@ -29,7 +29,7 @@ export default [
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      "react-compiler": reactCompiler,
+      'react-compiler': reactCompiler,
     },
     rules: {
       ...js.configs.recommended.rules,

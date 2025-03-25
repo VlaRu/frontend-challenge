@@ -42,15 +42,15 @@ function App() {
   }
 
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
-      <div className='main-container'>
-        <Header/>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="main-container">
+        <Header />
         <main className={`main-content_container ${theme}`}>
-          <TaskInput/>
-          <TaskList tasks={filteredTasks} setFilteredTasks={setFilteredTasks}/>
-          <TaskToolbar filter={filterTasks} active={isActiveFilter}/>
+          <TaskInput />
+          <TaskList tasks={filteredTasks} setFilteredTasks={setFilteredTasks} />
+          <TaskToolbar filter={filterTasks} active={isActiveFilter} />
         </main>
-        <footer className='footer'>Drag and drop to reorder list</footer>
+        <footer className="footer">Drag and drop to reorder list</footer>
       </div>
     </ThemeContext.Provider>
   );
