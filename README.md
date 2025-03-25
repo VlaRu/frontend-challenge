@@ -3,8 +3,9 @@
 ## Screen
 
 ![screen](screen-project.png)
+![screen](dark.png)
 
-## Deploy [link](https://effulgent-blancmange-6444a5.netlify.app/)
+## Deploy [link](https://zesty-frangollo-e537ef.netlify.app/)
 
 ## Source code [link](https://github.com/VlaRu/frontend-challenge/tree/feature/frontend-challenge)
 
@@ -26,6 +27,9 @@
 - Clear all completed todos
 - **Bonus**: Drag and drop to reorder items on the list
 
+
+### additional
+- implement switching theme
 
 ## Install
 
