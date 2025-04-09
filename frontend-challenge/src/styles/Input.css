@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 600px) {
   .input-form {
     height: 47px;
     margin-bottom: 15px;

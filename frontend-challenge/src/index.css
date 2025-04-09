@@ -80,12 +80,7 @@ button:hover {
   color: var(--light-very-dark-grayish-blue);
 }
 
-@media screen and (max-width: 375px) {
-  body {
-    background: var(--light-very-light-gray)
-      url(./assets/images/bg-mobile-light.jpg) no-repeat top center;
-  }
-
+@media screen and (max-width: 600px) {
   .filter-btn_container {
     position: absolute;
     width: 100%;
@@ -101,6 +96,13 @@ button:hover {
 
   .filter-btn_container.dark {
     box-shadow: 0px 3px 17px 1px var(--dark-very-dark-grayish-blue-1);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background: var(--light-very-light-gray)
+      url(./assets/images/bg-mobile-light.jpg) no-repeat top center;
   }
 }
 
