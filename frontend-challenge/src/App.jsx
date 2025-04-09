@@ -6,13 +6,13 @@ import { TaskToolbar } from './components/TaskToolbar';
 import { Header } from './components/Header';
 import './App.css';
 
-export const ThemeContext = createContext('light');
+export const ThemeContext = createContext('dark');
 
 function App() {
   const tasks = useSelector((state) => state.tasks?.value || []);
   const [filteredTasks, setFilteredTasks] = useState(tasks);
   const [isActiveFilter, setActiveFilter] = useState('all');
-  const [theme, setTheme] = useState('');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     setFilteredTasks(tasks);
