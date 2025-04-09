@@ -85,6 +85,11 @@
   z-index: 10;
 }
 
+.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
 @media screen and (max-width: 600px) {
   .task {
     min-height: 47px;

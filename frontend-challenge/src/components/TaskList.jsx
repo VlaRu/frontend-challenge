@@ -27,19 +27,35 @@ export function TaskList({ tasks, setFilteredTasks }) {
     setDraggedItemIndex(null);
   }
 
+  function handleTouchMove(e) {
+    const touch = e.touches[0];
+    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (target && target.closest('li')) {
+      const index = [...target.parentNode.children].indexOf(target);
+      handleDrop(index);
+    }
+  }
+
+  function handleTouchEnd() {
+    setDraggedItemIndex(null);
+  }
+
   return (
     <ul className={`list-container ${theme}`}>
       {tasks.length > 0 ? (
         tasks.map((task, index) => (
           <li
             className={
-              task.completed ? `task checked ${theme}` : `task ${theme}`
+              `task ${task.completed ? "checked" : ""} ${theme} ${draggedItemIndex === index ? 'dragging' : ''}`
             }
             key={task.id}
             draggable
             onDragStart={() => handleDragStart(index)}
             onDragOver={handleDragOver}
             onDrop={() => handleDrop(index)}
+            onTouchStart={() => handleDragStart(index)}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <input
               className="checkbox"
