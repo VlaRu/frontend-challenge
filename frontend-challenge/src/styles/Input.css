@@ -20,7 +20,9 @@
   font: inherit;
   color: var(--light-very-dark-grayish-blue);
   caret-color: var(--bright-blue);
-  width: 100%;
+  flex: 1;
+  word-wrap: break-word;
+  width: 90%;
 }
 
 .input-circle {

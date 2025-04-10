@@ -2,14 +2,17 @@ import { useContext, useState } from 'react';
 import { ThemeContext } from '../App';
 import { useDispatch } from 'react-redux';
 import { toggleTask, deleteTask } from '../store/taskSlice';
+import { EditInput } from './EditInput';
 import cross from '../assets/icons/icon-cross.svg';
 import pencil from '../assets/icons/icon-pencil.png';
+import save from '../assets/icons/save.png';
 import '../styles/Input.css';
 
 export function TaskList({ tasks, setFilteredTasks }) {
   const dispatch = useDispatch();
   const { theme } = useContext(ThemeContext);
   const [draggedItemIndex, setDraggedItemIndex] = useState(null);
+  const [editingTaskId, setEditingTaskId] = useState(null);
 
   function handleDrop(index) {
     if (draggedItemIndex === null) return;
@@ -27,6 +30,10 @@ export function TaskList({ tasks, setFilteredTasks }) {
       const index = [...target.parentNode.children].indexOf(target);
       handleDrop(index);
     }
+  }
+
+  function handleEditText(id) {
+    setEditingTaskId((prev) => (prev === id ? null : id));
   }
 
   return (
@@ -52,16 +59,21 @@ export function TaskList({ tasks, setFilteredTasks }) {
               checked={task.completed}
               onChange={() => dispatch(toggleTask(task.id))}
             />
-            <span
-              className="task-text"
-              style={{
-                textDecoration: task.completed ? 'line-through' : 'none',
-              }}
-            >
-              {task.text}
-            </span>
+            {editingTaskId === task.id ? (
+              <EditInput id={task.id} value={task.text} />
+            ):(
+              <span
+                className="task-text"
+                style={{
+                  textDecoration: task.completed ? 'line-through' : 'none',
+                }}
+              >
+                {task.text}
+              </span>
+            )}
             <button
-              className='delete-button'>
+              className='delete-button edit-button'
+              onClick={() => handleEditText(task.id)}>
                <img
                   className='delete-button_icon'
                   src={pencil}

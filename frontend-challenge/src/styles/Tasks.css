@@ -26,23 +26,26 @@
   color: var(--dark-light-grayish-blue);
 }
 
-.delete-button:hover {
+.task:hover .delete-button {
   opacity: 1;
 }
 
 .task-text {
-  font-weight: 700;
   margin-left: 25px;
   flex: 1;
   white-space: normal;
   word-wrap: break-word;
-  max-width: 80%;
+  max-width: 70%;
 }
 
 .delete-button {
   opacity: 0;
   transition: opacity 0.5s ease;
   margin-left: auto;
+}
+
+.input-edit-form {
+  width: 80%;
 }
 
 .checkbox {
