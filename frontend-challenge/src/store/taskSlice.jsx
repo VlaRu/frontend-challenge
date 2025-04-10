@@ -20,6 +20,12 @@ const taskSlice = createSlice({
       state.value = state.value.filter((task) => task.id !== action.payload);
       state.count = state.value.length;
     },
+    editTaskText: (state, action) => {
+      const task = state.value.find((task) => task.id === action.payload.id);
+      if (task) {
+        task.text = action.payload.text;
+      }
+    },
     toggleTask: (state, action) => {
       const task = state.value.find((task) => task.id === action.payload);
       if (task) {
@@ -34,6 +40,6 @@ const taskSlice = createSlice({
   },
 });
 
-export const { addNewTask, deleteTask, toggleTask, clearCompletedTasks } =
+export const { addNewTask, deleteTask, toggleTask, clearCompletedTasks, editTaskText } =
   taskSlice.actions;
 export default taskSlice.reducer;
