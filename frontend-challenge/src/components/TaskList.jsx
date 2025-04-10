@@ -3,20 +3,13 @@ import { ThemeContext } from '../App';
 import { useDispatch } from 'react-redux';
 import { toggleTask, deleteTask } from '../store/taskSlice';
 import cross from '../assets/icons/icon-cross.svg';
+import pencil from '../assets/icons/icon-pencil.png';
 import '../styles/Input.css';
 
 export function TaskList({ tasks, setFilteredTasks }) {
   const dispatch = useDispatch();
   const { theme } = useContext(ThemeContext);
   const [draggedItemIndex, setDraggedItemIndex] = useState(null);
-
-  function handleDragStart(indx) {
-    setDraggedItemIndex(indx);
-  }
-
-  function handleDragOver(e) {
-    e.preventDefault();
-  }
 
   function handleDrop(index) {
     if (draggedItemIndex === null) return;
@@ -36,10 +29,6 @@ export function TaskList({ tasks, setFilteredTasks }) {
     }
   }
 
-  function handleTouchEnd() {
-    setDraggedItemIndex(null);
-  }
-
   return (
     <ul className={`list-container ${theme}`}>
       {tasks.length > 0 ? (
@@ -50,12 +39,12 @@ export function TaskList({ tasks, setFilteredTasks }) {
             }
             key={task.id}
             draggable
-            onDragStart={() => handleDragStart(index)}
-            onDragOver={handleDragOver}
+            onDragStart={() => setDraggedItemIndex(index)}
+            onDragOver={(e)=> e.preventDefault()}
             onDrop={() => handleDrop(index)}
-            onTouchStart={() => handleDragStart(index)}
+            onTouchStart={() => setDraggedItemIndex(index)}
             onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+            onTouchEnd={() => setDraggedItemIndex(null)}
           >
             <input
               className="checkbox"
