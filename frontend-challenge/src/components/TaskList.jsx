@@ -72,6 +72,13 @@ export function TaskList({ tasks, setFilteredTasks }) {
               {task.text}
             </span>
             <button
+              className='delete-button'>
+               <img
+                  className='delete-button_icon'
+                  src={pencil}
+                  alt="pencil"/>
+            </button>
+            <button
               className="delete-button"
               onClick={() => dispatch(deleteTask(task.id))}
             >

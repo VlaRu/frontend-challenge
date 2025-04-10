@@ -26,7 +26,7 @@
   color: var(--dark-light-grayish-blue);
 }
 
-.task:hover .delete-button {
+.delete-button:hover {
   opacity: 1;
 }
 
