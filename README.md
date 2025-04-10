@@ -13,7 +13,7 @@
 
 - Vite
 - React
-- contextApi
+- ContextApi
 - Redux/RTK
 - CSS
 - Eslint
@@ -30,7 +30,9 @@
 - **Bonus**: Drag and drop to reorder items on the list
 
 ### additional
-- implement switching theme
+- Implement switching theme
+- Perform editing on the selected task
+- Realize touch logic for drag and drop items in mobile version
 
 ## Install
 
