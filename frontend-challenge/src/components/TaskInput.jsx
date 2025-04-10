@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNewTask } from '../store/taskSlice';
 import { ThemeContext } from '../App';
+import save from '../assets/icons/save.png';
 import '../styles/Tasks.css';
 
 export function TaskInput() {
@@ -41,6 +42,7 @@ export function TaskInput() {
         onBlur={handleBlur}
         onChange={handleChange}
       />
+      <img src={save} alt="save" />
     </form>
   );
 }
