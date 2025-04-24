@@ -5,7 +5,7 @@ import { ThemeContext } from '../App';
 import save from '../assets/icons/save.png';
 import '../styles/Tasks.css';
 
-export function TaskInput() {
+export function TaskInput({setAlert}) {
   const [inputValue, setInputValue] = useState('');
   const [placeholder, setPlaceholder] = useState('Create a new todo...');
   const dispatch = useDispatch();
@@ -20,6 +20,7 @@ export function TaskInput() {
     if (!inputValue.trim()) return;
     dispatch(addNewTask(inputValue));
     setInputValue('');
+    setAlert(true);
   }
 
   const handleFocus = () => {
