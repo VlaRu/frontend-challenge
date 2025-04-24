@@ -5,7 +5,7 @@
 ![screen](screen-project.png)
 ![screen](dark.png)
 
-## Deploy [link](https://zesty-frangollo-e537ef.netlify.app/)
+## Deploy [link](https://todo-list-react-rtk.netlify.app/)
 
 ## Source code [link](https://github.com/VlaRu/frontend-challenge/tree/feature/frontend-challenge)
 
